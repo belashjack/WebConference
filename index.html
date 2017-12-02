@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Document</title>
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #main {
+            background-image: url('rsz_1hawjin-jami-419877.jpg');
+            background-position-x: 50%;
+            background-attachment: fixed;
+            padding: 8%;
+        }
+
+        #content {
+            width: 48%;
+            min-width: 300px;
+            margin: 0 auto;
+            color: white;
+            text-align: center;
+        }
+
+        #content h1 {
+            color: white;
+        }
+
+        nav {
+            color: white;
+            width: 100%;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 70px;
+        }
+
+        li {
+            display: inline-block;
+            margin: 5px 1% 5px 2%;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        li:hover {
+            color: mediumvioletred;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 38px;
+            font-weight: 600;
+            color: midnightblue;
+            padding-bottom: 20px;
+        }
+
+        #main h1 {
+            font-size: 60px;
+            font-weight: 600;
+            padding: 8px;
+        }
+
+        h3 {
+            font-weight: 400;
+            line-height: 1.6em;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 200;
+        }
+
+        img {
+            margin: 20px;
+        }
+
+        #participate {
+            display: block;
+            width: 150px;
+            text-align: center;
+            margin: 0 auto;
+            border: 2px solid white;
+            border-radius: 3px;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+        #participate:hover {
+            color: mediumvioletred;
+            border-color: mediumvioletred;
+        }
+
+        .registration {
+            width: 150px;
+            height: 50px;
+            background-color: mediumvioletred;
+            font-size: 20px;
+            color: white;
+            outline: none;
+        }
+
+        .registration:hover {
+            background-color: white;
+            border-style: none;
+            border: 2px solid mediumvioletred;
+            color: mediumvioletred;
+        }
+
+        #aboutUs {
+            width: 70%;
+            float: left;
+            padding: 4%;
+        }
+
+        #address {
+            width: 28%;
+            float: right;
+            padding: 5% 5% 5% 0%;
+            font-size: 15px;
+        }
+
+        #address p {
+            font-size: 15px;
+            font-weight: 100;
+        }
+
+        .address {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        #speakers {
+            background-color: lightgray;
+            clear: both;
+            text-align: center;
+            padding: 4%;
+        }
+
+        #buyTickets {
+            background-color: lightgray;
+            text-align: center;
+            padding: 4%;
+        }
+
+        .buyDiv {
+            display: inline-block;
+            width: 270px;
+            background-color: white;
+            margin: 10px;
+            vertical-align: top;
+        }
+
+        .buyDivContent p {
+            width: 80%;
+            margin: 0 auto;
+            padding: 8px;
+            font-size: 18px;
+        }
+
+        .buyDivHeader {
+            width: 100%;
+            background-color: midnightblue;
+        }
+
+        .buyDivHeader p {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 20px;
+        }
+        .price {
+            font-size: 40px;
+            font-weight: 600;
+        }
+        
+        /* buttons */
+
+        .myButton {
+            width: 170px;
+            height: 50px;
+            font-size: 16px;
+            margin-top: 50px;
+            background: none;
+            color: white;
+            border: 2px solid white;
+            text-transform: uppercase;
+        }
+        .myButton:hover {
+            color: mediumvioletred;
+            background: none;
+            border: 2px solid mediumvioletred;
+        }
+        .myButton:active:focus, .myButton:focus {
+            color: mediumvioletred;
+            background: none;
+            border: 2px solid mediumvioletred;
+            outline: none;
+        }
+        .registrationButton {
+            height: 45px;
+            color: white;
+            background-color: mediumvioletred;
+            border: 2px solid mediumvioletred;
+            margin: 20px;
+        }
+        .registrationButton:hover {
+            color: mediumvioletred;
+            background-color: white;
+            border: 2px solid mediumvioletred;
+        }
+        .registrationButton:active:focus, .registrationButton:focus {
+            color: mediumvioletred;
+            background-color: white;
+            border: 2px solid mediumvioletred;
+        }
+
+        @media all and (max-width: 955px) {
+            .buyDiv {
+                width: 230px;
+            }
+            /* .buyDiv:last-child span {
+                display: inline-block;
+                margin-top: 20px;
+            } */
+        }
+
+        @media all and (max-width: 830px) {
+            .buyDiv {
+                width: 200px;
+            }
+            .price {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="main">
+            <nav>
+                <ul>
+                    <li>О нас</li>
+                    <li>Докладчики</li>
+                    <li>Расписание</li>
+                    <li>Купить билеты</li>
+                    <li>Партнёры</li>
+                    <li>Местоположение</li>
+                </ul>
+            </nav>
+            <div id="content">
+                <h3>МАЙ 14–15, 2018, МИНСК</h3>
+                <h1>WEBCONF18</h1>
+                <h3>Конференция по веб-программированию и интернет-технологиям. Академические исследования для решения практических
+                    задач.
+                </h3>
+                <a href="#buyTickets" id="participateLink" class="page-scroll">
+                        <button type="button" class="btn btn-default btn-lg myButton participateButton">Участвовать</button>
+                </a>
+                
+            </div>
+        </div>
+        <section id="aboutUs">
+            <p>Белорусский государственный университет (Беларусь, Минск) 14–18 мая 2018 г. проводит 4-ю Международную научно-практическую
+                конференцию «Веб-программирование и Интернет-технологии (WebConf2018)». Председатель оргкомитета академик
+                НАН Республики Беларусь Абламейко Сергей Владимирович. Соорганизатором конференции является ОИПИ АН Беларуси.</p>
+            <p>Приглашаем Вас и представителей Вашей организации принять участие в работе конференции. Возможно также участие
+                Вашей организации в качестве одного из соорганизаторов конференции. Официальные языки конференции — белорусский,
+                русский, английский.</p>
+            <p>Статус индивидуальных участников: докладчик на пленарном заседании (до 30 мин), докладчик на секции (до 15 мин),
+                слушатель. Участие в конференции может быть и заочным (с публикацией материалов в сборнике трудов при условии
+                внесения заявочного взноса).</p>
+            <p>В рамках работы секций возможна организация круглых столов, семинаров и т. д. Заявку на проведение таких мероприятий
+                необходимо предоставить в оргкомитет на адрес webconf2018@gmail.com до начала проведения конференции.</p>
+            <p>Статус индивидуальных участников: докладчик на пленарном заседании (до 30 мин), докладчик на секции (до 15 мин),
+                слушатель. Участие в конференции может быть и заочным (с публикацией материалов в сборнике трудов при условии
+                внесения заявочного взноса).</p>
+        </section>
+        <section id="address">
+            <span style="font-weight:600">Оргкомитет WebConf18</span>
+            <p class="address">
+                механико-математический факультет
+                <br>БГУ
+                <br>пр. Независимости, 4
+                <br>220030, Минск,
+                <br>Беларусь
+                <br>Тел: (375 17) 209-53-61
+            </p>
+        </section>
+        <section id="speakers">
+            <h1>Пленарные докладчики</h1>
+            <img src="http://webconf.bsu.by/img/marius-ciocirlan-398931.jpg" alt="You" width="250px" height="250px">
+            <p style="color:darkblue; font-weight:400; font-size: 15px">ЗДЕСЬ МОЖЕТЕ БЫТЬ ВЫ
+                <br> И ВАША ОРГАНИЗАЦИЯ</p>
+        </section>
+        <section style="height:600px;"></section>
+        <section id="buyTickets">
+            <h1>Организационный взнос</h1>
+            <div id="divToCenterOtherDivs">
+                <div class="buyDiv">
+                    <div class="buyDivHeader">
+                        <p>СЛУШАТЕЛЬ</p>
+                    </div>
+                    <div class="buyDivContent">
+                        <span class="price">Бесплатно</span>
+                        <p>Регистрация слушателей, не планирующих выступление с докладом</p>
+                        <p>Регистрация может быть продолжена вплоть до начала конференции</p>
+                        <button class="btn btn-primary myButton registrationButton">Регистрация</button>
+                    </div>
+                </div>
+                <div class="buyDiv">
+                    <div class="buyDivHeader">
+                        <p>ДОКЛАДЧИК</p>
+                    </div>
+                    <div class="buyDivContent">
+                        <span class="price">&#36;10</span>
+                        <p>Организационный взнос по курсу НБРБ включает стоимость опубликованных материалов для докладчиков.</p>
+                        <p>Регистрация до 28 февраля 2018 г.</p>
+                        <button class="btn btn-primary myButton registrationButton">Регистрация</button>
+                    </div>
+                </div>
+                <div class="buyDiv">
+                    <div class="buyDivHeader">
+                        <p>ОРГАНИЗАЦИОННЫЙ ПАКЕТ</p>
+                    </div>
+                    <div class="buyDivContent">
+                        <span class="price">&#36;XXXX</span>
+                        <p>Информационные стенды и профильные мастер-классы</p>
+                        <p>Распространение информационных материалов на бумажных и электронных носителях</p>
+                        <button class="btn btn-primary myButton registrationButton">Регистрация</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="jquery.easing.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
