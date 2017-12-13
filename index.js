@@ -28,7 +28,7 @@ function postToGoogle2() {
             url: "https://docs.google.com/forms/d/e/1FAIpQLSd6MuYYph5HIlvlJiF11t33DMGK0w8nmlGGp2u8dmoZgmvBGg/formResponse",
             data: { "entry.1135768056": nameField, "entry.1512671695": lastNameField, "entry.2080661211": workOrStudyPlaceField, "entry.1959877280": emailField },
             type: "POST",
-            crossDomain:true,
+            // crossDomain:true,
 
             // последнее что сделал - изменил dataType: "xml" на "text", а то запускался обработчик на error.
             dataType: "xml",
