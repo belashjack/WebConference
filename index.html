@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
     <title>Document</title>
-    
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -21,7 +21,7 @@
         }
 
         #content {
-            width: 48%;
+            width: 56%;
             min-width: 300px;
             margin: 0 auto;
             color: white;
@@ -42,6 +42,8 @@
         ul {
             list-style-type: none;
             margin-bottom: 70px;
+            text-align: center;
+            padding: 0;
         }
 
         li {
@@ -180,11 +182,12 @@
             font-weight: 600;
             padding: 20px;
         }
+
         .price {
             font-size: 40px;
             font-weight: 600;
         }
-        
+
         /* buttons */
 
         .myButton {
@@ -197,17 +200,31 @@
             border: 2px solid white;
             text-transform: uppercase;
         }
+
         .myButton:hover {
             color: mediumvioletred;
             background: none;
             border: 2px solid mediumvioletred;
         }
-        .myButton:active:focus, .myButton:focus {
+
+        .myButton:not([disabled]):not(.disabled):active,
+        .myButton:focus {
             color: mediumvioletred;
             background: none;
             border: 2px solid mediumvioletred;
             outline: none;
+
+
+
+            /* box-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadow */
+            box-shadow: inset 0 0.2rem rgba(43, 43, 43, 0.5);
         }
+
+
+
+
+        /* box-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadow */
+
         .registrationButton {
             height: 45px;
             color: white;
@@ -215,12 +232,15 @@
             border: 2px solid mediumvioletred;
             margin: 20px;
         }
+
         .registrationButton:hover {
             color: mediumvioletred;
             background-color: white;
             border: 2px solid mediumvioletred;
         }
-        .registrationButton:active:focus, .registrationButton:focus {
+
+        .registrationButton:active:focus,
+        .registrationButton:focus {
             color: mediumvioletred;
             background-color: white;
             border: 2px solid mediumvioletred;
@@ -230,24 +250,70 @@
             .buyDiv {
                 width: 230px;
             }
-            /* .buyDiv:last-child span {
-                display: inline-block;
-                margin-top: 20px;
-            } */
         }
 
         @media all and (max-width: 830px) {
             .buyDiv {
-                width: 200px;
+                width: 210px;
             }
             .price {
                 font-size: 34px;
+            }
+            #main h1 {
+                font-size: 48px;
             }
         }
     </style>
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ввод персональных данных</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="registrationForm" target="_self" onsubmit="" action="" novalidate>
+                        <div class="form-group">
+                            <label for="nameField">Имя</label>
+                            <input type="text" name="name" class="form-control" id="nameField" placeholder="Введите имя" required>
+                            <div class="invalid-feedback">Введите правильное имя</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastNameField">Фамилия</label>
+                            <input type="text" name="lastName" class="form-control" id="lastNameField" placeholder="Введите фамилию" required>
+                            <div class="invalid-feedback">Введите правильную фамилию</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="workOrStudyPlace">Место работы или учёбы</label>
+                            <input type="text" name="workOrStudyPlace" class="form-control" id="workOrStudyPlaceField" aria-describedby="workStudyHelp" placeholder="Введите место работы или учёбы"
+                                required>
+                            <small id="workStudyHelp" class="form-text text-muted">Например: БГУ, ММФ</small>
+                            <div class="invalid-feedback">Введите правильное место работы или учёбы</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailField">Email address</label>
+                            <input type="email" name="email" class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email"
+                                required>
+                            <div class="invalid-feedback">Введите правильный email</div>
+                        </div>
+                        <div class="form-row">
+                            <button style="margin:0 auto" type="submit" class="btn btn-primary">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+            </div>
+        </div>
+    </div>
     <div id="container">
         <div id="main">
             <nav>
@@ -267,9 +333,9 @@
                     задач.
                 </h3>
                 <a href="#buyTickets" id="participateLink" class="page-scroll">
-                        <button type="button" class="btn btn-default btn-lg myButton participateButton">Участвовать</button>
+                    <button type="button" class="btn btn-default btn-lg myButton participateButton">Участвовать</button>
                 </a>
-                
+
             </div>
         </div>
         <section id="aboutUs">
@@ -317,7 +383,7 @@
                         <span class="price">Бесплатно</span>
                         <p>Регистрация слушателей, не планирующих выступление с докладом</p>
                         <p>Регистрация может быть продолжена вплоть до начала конференции</p>
-                        <button class="btn btn-primary myButton registrationButton">Регистрация</button>
+                        <button class="btn btn-primary myButton registrationButton" data-toggle="modal" data-target="#exampleModal">Регистрация</button>
                     </div>
                 </div>
                 <div class="buyDiv">
@@ -328,7 +394,7 @@
                         <span class="price">&#36;10</span>
                         <p>Организационный взнос по курсу НБРБ включает стоимость опубликованных материалов для докладчиков.</p>
                         <p>Регистрация до 28 февраля 2018 г.</p>
-                        <button class="btn btn-primary myButton registrationButton">Регистрация</button>
+                        <button class="btn btn-primary myButton registrationButton" data-toggle="modal" data-target="#exampleModal">Регистрация</button>
                     </div>
                 </div>
                 <div class="buyDiv">
@@ -339,14 +405,18 @@
                         <span class="price">&#36;XXXX</span>
                         <p>Информационные стенды и профильные мастер-классы</p>
                         <p>Распространение информационных материалов на бумажных и электронных носителях</p>
-                        <button class="btn btn-primary myButton registrationButton">Регистрация</button>
+                        <button class="btn btn-primary myButton registrationButton" data-toggle="modal" data-target="#exampleModal">Регистрация</button>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-    <script src="jquery.easing.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="index.js"></script>
 </body>
 
