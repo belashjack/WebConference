@@ -213,18 +213,8 @@
             background: none;
             border: 2px solid mediumvioletred;
             outline: none;
-
-
-
-            /* box-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadow */
-            box-shadow: inset 0 0.2rem rgba(43, 43, 43, 0.5);
+            box-shadow: inset 0 0.15em 0.5em rgba(43, 43, 43, 0.5);
         }
-
-
-
-
-        /* box-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadowbox-shadow */
-
         .registrationButton {
             height: 45px;
             color: white;
@@ -267,6 +257,25 @@
 </head>
 
 <body>
+      <!-- Modal -->
+      <div class="modal fade bd-example-modal-sm" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="confirmationMessage">Данные успешно отправлены на адрес </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -303,7 +312,7 @@
                             <div class="invalid-feedback">Введите правильный email</div>
                         </div>
                         <div class="form-row">
-                            <button style="margin:0 auto" type="submit" class="btn btn-primary">Отправить</button>
+                            <button style="margin:0 auto" type="submit" class="btn btn-primary" id="submit">Отправить</button>
                         </div>
                     </form>
                 </div>

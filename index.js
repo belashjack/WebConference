@@ -12,6 +12,7 @@ function scrollToRegistrationSection() {
 function formSubmit(event) {
     event.preventDefault();
     if (registrationForm.checkValidity() !== false) {
+        document.getElementById('submit').setAttribute('disabled', true);
         postToGoogle2();
     }
     registrationForm.classList.add('was-validated');
@@ -27,11 +28,11 @@ function postToGoogle2() {
             // нужно установить расширение https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi/related?hl=ru
             url: "https://docs.google.com/forms/d/e/1FAIpQLSd6MuYYph5HIlvlJiF11t33DMGK0w8nmlGGp2u8dmoZgmvBGg/formResponse",
             data: { "entry.1135768056": nameField, "entry.1512671695": lastNameField, "entry.2080661211": workOrStudyPlaceField, "entry.1959877280": emailField },
-            type: "POST",
+            type: "GET",
             // crossDomain:true,
 
             // последнее что сделал - изменил dataType: "xml" на "text", а то запускался обработчик на error.
-            dataType: "xml",
+            // dataType: "xml",
             // statusCode:{
             //     0:function(){
             //         alert('Ответ - 0');
@@ -43,11 +44,20 @@ function postToGoogle2() {
             success: function (data, textStatus, jqXHR) {
                 console.log('success');
             },
-            // error: function (data, textStatus, jqXHR) {
-            //     console.log(data);
-            //     console.log(jqXHR.getResponseHeader);
-            //     console.log(data.status + ' (jqXHR)');
-            // }
+            error: function (data, textStatus, jqXHR) {
+                // console.log(data);
+                // console.log(jqXHR.getResponseHeader);
+                // console.log(data.status + ' (jqXHR)');
+                $('#exampleModal').modal('hide');
+                document.getElementById('nameField').value = '';
+                document.getElementById('lastNameField').value = '';
+                document.getElementById('workOrStudyPlaceField').value = '';
+                document.getElementById('emailField').value = '';
+                registrationForm.classList.remove('was-validated');
+                $("#confirmationMessage")[0].innerHTML += '<strong>' + emailField + '</strong>';
+                $('#exampleModal2').modal('show');
+
+            }
         });    
 }
 
